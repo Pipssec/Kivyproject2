@@ -9,23 +9,19 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_x: 1
-            #y: root.height - self.height
-
-
+            allow_stretch: True
+            keep_ratio: False
     FloatLayout:
         Itembutton:
-            text: "Список\nзаказов"
-            pos_hint: {'x': .15, 'y': .6}
-            size_hint: .2, .2
+            text: "Список заказов"
+            pos_hint: {'x': .05, 'y': .7}
+            size_hint: .7, .1
             on_press: root.manager.current = 'list_orders'
-
-
-
+            #font_size: 70
         Itembutton:
             text: "Список\n   СТО"
-            pos_hint: {'x': .65, 'y': .6}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .55}
+            size_hint: .5, .1
             on_press: root.manager.current = 'liststo'
 
         Itembutton:
@@ -36,8 +32,8 @@
 
         Itembutton:
             text: "Создать\nзаказ"
-            pos_hint: {'x': .15, 'y': .3}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .4}
+            size_hint: .3, .1
             on_press: root.manager.current = 'createorder'
 
         Itembutton:
@@ -63,8 +59,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
 
         Label:
             text: '    Created by\n Artsem Stsepanenka '
@@ -88,8 +84,7 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+
     BoxLayout:
         orientation: 'vertical'
 
@@ -127,8 +122,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
 
@@ -161,8 +156,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     FloatLayout:
         Label:
             text: 'Логин'
@@ -256,8 +251,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -282,8 +277,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -304,8 +299,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -326,8 +321,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -352,8 +347,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -378,8 +373,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -404,8 +399,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     FloatLayout:
         Label:
             text: 'Логин'
@@ -451,8 +446,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     FloatLayout:
         Label:
             text: 'Название заказа'
@@ -568,8 +563,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -590,8 +585,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
         Label:
@@ -616,20 +611,19 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
 
     FloatLayout:
         Itembutton:
             text: "Список\nзаказов"
-            pos_hint: {'x': .15, 'y': .6}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .7}
+            size_hint: .7, .1
             on_press: root.manager.current = 'list_orders'
-
         Itembutton:
             text: "Список\n   СТО"
-            pos_hint: {'x': .65, 'y': .6}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .55}
+            size_hint: .55, .1
             on_press: root.manager.current = 'liststo'
 
         Itembutton:
@@ -640,14 +634,14 @@
 
         Itembutton:
             text: "Создать\nзаказ"
-            pos_hint: {'x': .15, 'y': .3}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .4}
+            size_hint: .4, .1
             on_press: root.manager.current = 'createorder'
 
         Itembutton:
             text: "Мой\nпрофиль"
-            pos_hint: {'x': .65, 'y': .3}
-            size_hint: .2, .2
+            pos_hint: {'x': .05, 'y': .25}
+            size_hint: .3, .1
             on_press: root.manager.current = 'myprofile'
 
 
@@ -668,8 +662,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     FloatLayout:
         Label:
             text: "Название станции:"
@@ -712,8 +706,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
     BoxLayout:
         orientation: 'vertical'
 
@@ -832,8 +826,8 @@
     FloatLayout:
         AsyncImage:
             source: 'data/logo2.jpg'
-            size_hint_y: 1
-            y: root.height - self.height
+            allow_stretch: True
+            keep_ratio: False
 
     FloatLayout:
         Label:
@@ -849,8 +843,8 @@
             on_press: root.manager.current = root.menu()
 
 <Itembutton@Button>:
-    color: 0.396078431, 0.803921569, 0.807843137, 1
-    background_color: 0.5882, 0.2941, 0, .9
+    #color: 0, 0, 0
+    background_color: 0.5882, 0.2941, 0, .4
     canvas.before:
         Color:
             rgba: 0.5882, 0.2941, 0.3, 1
