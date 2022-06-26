@@ -3,47 +3,50 @@
 <MenuScreen>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
     FloatLayout:
         AsyncImage:
-            source: 'data/profile.jpg'
-            size: self.size
-            pos_hint: {'center_x':.5, 'center_y': .5}
+            source: 'data/logo2.jpg'
+            size_hint_x: 1
+            #y: root.height - self.height
+
 
     FloatLayout:
-        Button:
+        Itembutton:
             text: "Список\nзаказов"
             pos_hint: {'x': .15, 'y': .6}
             size_hint: .2, .2
             on_press: root.manager.current = 'list_orders'
 
-        Button:
-            text: "Список\nСТО"
+
+
+        Itembutton:
+            text: "Список\n   СТО"
             pos_hint: {'x': .65, 'y': .6}
             size_hint: .2, .2
             on_press: root.manager.current = 'liststo'
 
-        Button:
+        Itembutton:
             text: "О нас"
             pos_hint: {'x': .0, 'y': .9}
             size_hint: 1, .1
             on_press: root.manager.current = 'about_us'
 
-        Button:
+        Itembutton:
             text: "Создать\nзаказ"
             pos_hint: {'x': .15, 'y': .3}
             size_hint: .2, .2
             on_press: root.manager.current = 'createorder'
 
-        Button:
+        Itembutton:
             text: "Авторизация"
             pos_hint: {'x': .5, 'y': .0}
             size_hint: .5, .1
             on_press: root.manager.current = 'authorization'
 
-        Button:
+        Itembutton:
             text: "Регистрация"
             pos_hint: {'x': .0, 'y': .0}
             size_hint: .5, .1
@@ -54,21 +57,22 @@
 <AboutUs>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
     FloatLayout:
         AsyncImage:
-            source: 'data/profile.jpg'
-            size: self.size
-            pos_hint: {'center_x':.5, 'center_y': .5}
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
 
         Label:
-            text: 'Created by Artsem Stsepanenka '
-            size_hint: .5, .6
-            pos_hint: {'x':.3, 'y': .35}
-            color: 0, .35, .35
-        Button:
+            text: '    Created by\n Artsem Stsepanenka '
+            size_hint: .5, .5
+            pos_hint: {'x':.3, 'y': .6}
+            color: 0.396078431, 0.803921569, 0.807843137, 1
+            font_size: 30
+        Itembutton:
             text: 'Меню'
             size_hint: 1, .1
             pos_hint: {'x':.0, 'y': .0}
@@ -78,15 +82,20 @@
 <ListOrders>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
         orientation: 'vertical'
 
         RecycleView:
             data: root.data
-            viewclass: 'Button'
+            viewclass: 'Itembutton'
 
             RecycleBoxLayout:
                 orientation: 'vertical'
@@ -97,7 +106,7 @@
                 size_hint_y: None
                 height: self.minimum_height
 
-        Button:
+        Itembutton:
             text: 'Меню'
             on_press: root.manager.current = root.menu()
             size_hint: 1, .1
@@ -112,15 +121,20 @@
 <ListSto>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
         orientation: 'vertical'
 
         RecycleView:
             data: root.data
-            viewclass: 'Button'
+            viewclass: 'Itembutton'
 
             RecycleBoxLayout:
                 orientation: 'vertical'
@@ -131,7 +145,7 @@
                 size_hint_y: None
                 height: self.minimum_height
 
-        Button:
+        Itembutton:
             text: 'Меню'
             on_press: root.manager.current = root.menu()
             size_hint: 1, .1
@@ -139,12 +153,17 @@
 #######################################
 
 <Registration>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
     FloatLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
+    FloatLayout:
         Label:
             text: 'Логин'
             size_hint: .5, .05
@@ -212,13 +231,13 @@
             pos_hint: {'x': .5, 'y': .65}
             input_type: 'number'
             input_filter: 'int'
-        Button:
+        Itembutton:
             id: back2
             text: 'Назад'
             size_hint: .5, .1
             pos_hint: {'x': .0, 'y': .0}
             on_press: root.manager.current = 'menu'
-        Button:
+        Itembutton:
             id: reg1
             text: 'Зарегистрироваться'
             size_hint: .5, .1
@@ -229,20 +248,25 @@
 ###################################
 
 <RegBad>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Пароли не совпадают!'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Назад'
             on_press: root.manager.current = 'registration'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Выход'
             on_press: root.manager.current = 'menu'
@@ -250,16 +274,21 @@
 #######################################
 
 <RegGood>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Регистрация прошла успешно'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Вход'
             on_press: root.manager.current = 'menu'
@@ -267,16 +296,21 @@
 #######################################
 
 <OrderGood>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Заказ успешно создан'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Меню'
             on_press: root.manager.current = root.menu()
@@ -284,20 +318,25 @@
 #######################################
 
 <BadLogin>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Пользователь с таким логином существует!'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Назад'
             on_press: root.manager.current = 'registration'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Выход'
             on_press: root.manager.current = 'menu'
@@ -305,20 +344,25 @@
 #################################################
 
 <BadOblastOrTown>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Заполните все строки,\nлибо неправильно указаны область или город'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Назад'
             on_press: root.manager.current = 'registration'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Выход'
             on_press: root.manager.current = 'menu'
@@ -326,20 +370,25 @@
 ###############################################
 
 <BadOblastOrTown2>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Заполните все строки,\nлибо неправильно указаны область или город'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Назад'
             on_press: root.manager.current = 'createorder'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Выход'
             on_press: root.manager.current = 'menu'
@@ -347,12 +396,17 @@
 ######################################################
 
 <Authorization>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
     FloatLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
+    FloatLayout:
         Label:
             text: 'Логин'
             size_hint: .5, .05
@@ -372,13 +426,13 @@
             multiline: False
             size_hint: .45, .05
             pos_hint: {'x': .5, 'y': .50}
-        Button:
+        Itembutton:
             id: back2
             text: 'Назад'
             size_hint: .5, .1
             pos_hint: {'x': .0, 'y': .0}
             on_press: root.manager.current = 'menu'
-        Button:
+        Itembutton:
             id: reg1
             text: 'Авторизоваться'
             size_hint: .5, .1
@@ -389,12 +443,17 @@
 ####################################
 
 <CreateOrder>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
     FloatLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
+    FloatLayout:
         Label:
             text: 'Название заказа'
             size_hint: .5, .05
@@ -486,13 +545,13 @@
             pos_hint: {'x': .5, 'y': .45}
             input_type: 'number'
             input_filter: 'int'
-        Button:
+        Itembutton:
             id: back2
             text: 'Назад'
             size_hint: .5, .1
             pos_hint: {'x': .0, 'y': .0}
             on_press: root.manager.current = root.back()
-        Button:
+        Itembutton:
             id: create_order
             text: 'Создать заказ'
             size_hint: .5, .1
@@ -501,16 +560,21 @@
 #################################################
 
 <AuthGood>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Авторизация прошла успешно'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Главный экран'
             on_press: root.manager.current = 'authmenu'
@@ -518,20 +582,25 @@
 #################################################
 
 <AuthBad>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
-        canvas.before:
-            Color:
-                rgb: 1, .17, 0, 0
-            Rectangle:
-                size: self.size
         orientation: 'vertical'
         Label:
             text: 'Неправильно введен логин или пароль!'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Назад'
             on_press: root.manager.current = 'authorization'
-        Button:
+        Itembutton:
             size_hint: 1, .1
             text: 'Выход'
             on_press: root.manager.current = 'menu'
@@ -541,48 +610,48 @@
 <AuthMenu>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
     FloatLayout:
         AsyncImage:
-            source: 'data/profile.jpg'
-            size: self.size
-            pos_hint: {'center_x':.5, 'center_y': .5}
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
 
     FloatLayout:
-        Button:
+        Itembutton:
             text: "Список\nзаказов"
             pos_hint: {'x': .15, 'y': .6}
             size_hint: .2, .2
             on_press: root.manager.current = 'list_orders'
 
-        Button:
-            text: "Список\nСТО"
+        Itembutton:
+            text: "Список\n   СТО"
             pos_hint: {'x': .65, 'y': .6}
             size_hint: .2, .2
             on_press: root.manager.current = 'liststo'
 
-        Button:
+        Itembutton:
             text: "О нас"
             pos_hint: {'x': .0, 'y': .9}
             size_hint: 1, .1
             on_press: root.manager.current = 'about_us'
 
-        Button:
+        Itembutton:
             text: "Создать\nзаказ"
             pos_hint: {'x': .15, 'y': .3}
             size_hint: .2, .2
             on_press: root.manager.current = 'createorder'
 
-        Button:
+        Itembutton:
             text: "Мой\nпрофиль"
             pos_hint: {'x': .65, 'y': .3}
             size_hint: .2, .2
             on_press: root.manager.current = 'myprofile'
 
 
-        Button:
+        Itembutton:
             text: "Выход"
             pos_hint: {'x': .0, 'y': .0}
             size_hint: 1, .1
@@ -593,9 +662,14 @@
 <MyProfile>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     FloatLayout:
         Label:
             text: "Название станции:"
@@ -621,7 +695,7 @@
             text: root.sto_phone
             pos_hint: {'x': .5, 'y': .6}
             size_hint: .5, .1
-        Button:
+        Itembutton:
             text: "Меню"
             pos_hint: {'x': .0, 'y': .0}
             size_hint: 1, .1
@@ -632,9 +706,14 @@
 <FullInformation>:
     canvas.before:
         Color:
-            rgb: 1, .17, 0, 0
+            rgb: 0.5882, 0.2941, 0, 1
         Rectangle:
             size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
     BoxLayout:
         orientation: 'vertical'
 
@@ -700,7 +779,7 @@
                 size_hint: .5, .05
                 pos_hint: {'x': .5, 'y': .40}
             InformationLabel:
-                text: "Контактный номер заказчика:"
+                text: "Контактный номер:"
                 size_hint: .5, .05
                 pos_hint: {'x': .0, 'y': .35}
             InformationLabel:
@@ -728,11 +807,11 @@
         BoxLayout:
             orientation: 'horizontal'
             size_hint: 1, .1
-            Button:
+            Itembutton:
                 text: "Назад"
                 size_hint: .5, 1
                 on_press: root.manager.current = 'list_orders'
-            Button:
+            Itembutton:
                 text: "Меню"
                 size_hint: .5, 1
                 on_press: root.manager.current = root.menu()
@@ -744,8 +823,37 @@
 
 ##########################################################
 
-<Error>:
-    BoxLayout:
-        Button:
-            text: "Здесь еще пусто\n нажми для выхода"
-            on_release: root.manager.current = root.menu()
+<NoSignal>:
+    canvas.before:
+        Color:
+            rgb: 0.5882, 0.2941, 0, 1
+        Rectangle:
+            size: self.size
+    FloatLayout:
+        AsyncImage:
+            source: 'data/logo2.jpg'
+            size_hint_y: 1
+            y: root.height - self.height
+
+    FloatLayout:
+        Label:
+            text: 'Ошибка связи '
+            size_hint: .5, .6
+            pos_hint: {'x':.3, 'y': .35}
+            color: 0, .35, .35
+            font_size: 70
+        Itembutton:
+            text: 'Меню'
+            size_hint: 1, .1
+            pos_hint: {'x':.0, 'y': .0}
+            on_press: root.manager.current = root.menu()
+
+<Itembutton@Button>:
+    color: 0.396078431, 0.803921569, 0.807843137, 1
+    background_color: 0.5882, 0.2941, 0, .9
+    canvas.before:
+        Color:
+            rgba: 0.5882, 0.2941, 0.3, 1
+        Line:
+            width: 2
+            rectangle: self.x, self.y, self.width, self.height
